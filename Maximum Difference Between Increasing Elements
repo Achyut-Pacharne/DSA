@@ -1,0 +1,17 @@
+class Solution {
+    public int maximumDifference(int[] nums) {
+
+        int diff = 0;
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] < min) {
+                min = nums[i];
+            }
+            if (nums[i] > min) {
+                diff = Math.max(nums[i] - min , diff);
+            }
+            if(i == nums.length-1 && diff == 0) return -1; 
+        }
+        return diff;
+    }
+}
